@@ -1,2 +1,2 @@
-cd C:\Users\dpk\Java-workspace\SeleniumDevOps
+cd C:\Users\dpk\git\JavaForAutomation\SeleniumDevOps
 mvn clean install
