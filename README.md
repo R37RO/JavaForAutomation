@@ -1,5 +1,5 @@
 # JavaForAutomation
-Automation using selenium4
+Automation using selenium 4
 
 ## Selenium 4
 Launch browser
