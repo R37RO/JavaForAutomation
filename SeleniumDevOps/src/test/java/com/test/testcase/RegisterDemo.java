@@ -914,7 +914,7 @@ public class RegisterDemo {
 
 
 		//Step 21: Close the browser
-		driver.close();
+		driver.quit();
 		System.out.println("Application closed successfully\n");
 
 		//End of testing
