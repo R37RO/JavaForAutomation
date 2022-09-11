@@ -10,6 +10,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class RegisterDemo {
 
 	public WebDriver driver;
@@ -36,12 +38,10 @@ public class RegisterDemo {
 	@BeforeClass
 	public void launchApplication() {
 
-		//Set System properties for chrome driver
-		System.setProperty("webdriver.chrome.driver", ".\\Drivers\\chromedriver.exe");
-
-		//Create object instance for chrome driver
-		driver = new ChromeDriver();
-
+		//selenium 4 driver
+		WebDriverManager.chromedriver().setup();
+		ChromeDriver driver = new ChromeDriver();
+		
 		//Step 1: Open the browser and launch url
 		driver.get(url);
 		
