@@ -22,9 +22,6 @@ public class RegisterDemo {
 		WebDriverManager.chromedriver().setup();
 		ChromeDriver driver = new ChromeDriver();
 		
-
-
-
 		//Parameterized all input values
 		String url = "https://nxtgenaiacademy.com";
 		String actualWebPageTitle = "NxtGen A.I Academy – Learn With Clarity";
