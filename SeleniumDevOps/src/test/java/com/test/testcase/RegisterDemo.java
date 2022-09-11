@@ -1,77 +1,64 @@
 package com.test.testcase;
 
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+
 public class RegisterDemo {
 
-	public WebDriver driver;
+	public static void main(String[] args) {
 
-	//Parameterized all input values
-	String url = "https://nxtgenaiacademy.com";
-	String actualWebPageTitle = "NxtGen A.I Academy – Learn With Clarity";
-	String firstNameInput = "Deepak";
-	String lastNameInput = "Singh";
-	String streetInput = "The xyz Road";
-	String cityInput = "Mumbai";
-	String countryInput = "India";
-	String stateInput = "Maharashtra";
-	String postalInput = "400001";
-	String emailInput = "abcd@gmail.com";
-	String dateInput = "05/08/2022";
-	String mobileInput = "9400000000";
-	String hourInput = "11";
-	String minutesInput = "30";
-	String queryInput = "What is the duration of the courses ?";
+		/*
+		 * Selenium demo user registration end to end flow.
+		 */
 
-
-	//BeforeClass Method will execute before the first test case.
-	@BeforeClass
-	public void launchApplication() {
-
-		//selenium 4 driver
+		//Selenium 4 webdriver
 		WebDriverManager.chromedriver().setup();
 		ChromeDriver driver = new ChromeDriver();
 		
+
+
+
+		//Parameterized all input values
+		String url = "https://nxtgenaiacademy.com";
+		String actualWebPageTitle = "NxtGen A.I Academy – Learn With Clarity";
+		String firstNameInput = "Deepak";
+		String lastNameInput = "Singh";
+		String streetInput = "The xyz Road";
+		String cityInput = "Mumbai";
+		String countryInput = "India";
+		String stateInput = "Maharashtra";
+		String postalInput = "400001";
+		String emailInput = "abcd@gmail.com";
+		String dateInput = "05/08/2022";
+		String mobileInput = "9400000000";
+		String hourInput = "11";
+		String minutesInput = "30";
+		String queryInput = "What is the duration of the course";
+
+
+
 		//Step 1: Open the browser and launch url
 		driver.get(url);
-		
+
+		//Maximize the browser window
+		driver.manage().window().maximize();
+				
 		//Application is launched
 		System.out.println("Application launched successfully\n");
-		
-		//Maximize the browser window
-		driver.manage().window().maximize();  
-
-		System.out.println("Application window is maximised successfully.");
-		System.out.println();
 
 		
-	}
-	
-	
-	//AfterClass Method will execute after executing all the test cases
-	@AfterClass
-	public void closeApplication() {
+		System.out.println("******** REGISTER DEMO END TO END TEST LOG ********");
+		//Separator for clean output on console
+		System.out.println(" ");		
 
-		//Close the browser
-		System.out.println(" ");
-		driver.close();
-		System.out.println("Application closed successfully\n");
-	}
-
-	@Test(priority=1)
-	public void navigateToRegistrationForm() {
-
-		//WebPage Title validation
+		//Step 2: WebPage Title validation
 		String expectedWebPageTitle = driver.getTitle();		
 		if(actualWebPageTitle.equals(expectedWebPageTitle)) 
 		{
@@ -90,7 +77,7 @@ public class RegisterDemo {
 
 
 		/* 
-		 * Navigating to Register Demo page from home page.
+		 * Step 3: Navigating to Register Demo page from home page.
 		 * through Qa automation > Practice Automation > click-Registration Form
 		 */	
 
@@ -160,17 +147,15 @@ public class RegisterDemo {
 			System.out.println("Register on Demo page link is not displayed");
 		}
 
-	}
-
-	@Test(priority=2)
-	public void registerUser() {
+		//Separator for clean output on console
+		System.out.println(" ");
 
 		/*
 		 * Registration form
 		 * Address, mail, courses convenient time
 		 */
 
-		//Registration-Form title validation
+		//Step 4: Registration-Form title validation
 		//crating the formTitle webelement for formTitle
 		WebElement formTitle = driver.findElement(By.xpath("//*[normalize-space()='Register For Demo']"));
 
@@ -217,7 +202,7 @@ public class RegisterDemo {
 		 * sendKeys() 
 		 */
 
-		//Enter the first name
+		//Step 5: Enter the first name
 		//declare the webelement object
 		WebElement firstName = driver.findElement(By.id("vfb-5"));
 
@@ -252,7 +237,7 @@ public class RegisterDemo {
 
 
 
-		//Enter the last name
+		//Step 6: Enter the last name
 		//declare the webelement object
 		WebElement lastName = driver.findElement(By.id("vfb-7"));
 
@@ -285,7 +270,7 @@ public class RegisterDemo {
 
 
 
-		/* Select the Gender
+		/* Step 7: Select the Gender
 		 * Gender radio button handling
 		 * isDisplayed()
 		 * isEnabled() 
@@ -341,7 +326,7 @@ public class RegisterDemo {
 
 
 
-		//Street Address
+		//Step:8 Street Address
 		//declare the webelement object
 		WebElement streetAddress = driver.findElement(By.id("vfb-13-address"));
 
@@ -375,7 +360,7 @@ public class RegisterDemo {
 
 
 
-		//Enter the city
+		//Step 9: Enter the city
 		//declare the webelement object
 		WebElement city = driver.findElement(By.id("vfb-13-city"));
 
@@ -408,7 +393,7 @@ public class RegisterDemo {
 
 
 
-		//Enter the state
+		//Step 10: Enter the state
 		//declare the webelement object
 		WebElement state = driver.findElement(By.id("vfb-13-state"));
 
@@ -441,7 +426,7 @@ public class RegisterDemo {
 
 
 
-		//postal code
+		//Step 11: postal code
 		//declare the webelement object
 		WebElement postalCode = driver.findElement(By.id("vfb-13-zip"));
 
@@ -474,7 +459,7 @@ public class RegisterDemo {
 
 
 
-		//Country selection
+		//Step 11: country selection
 		//declare the webelement object
 		WebElement country = driver.findElement(By.id("vfb-13-country"));
 
@@ -511,7 +496,7 @@ public class RegisterDemo {
 		System.out.println(" ");
 
 
-		//Enter the Email
+		//Step:12 Enter the Email
 		//declare the webelement object
 		WebElement email = driver.findElement(By.id("vfb-14"));
 
@@ -544,7 +529,7 @@ public class RegisterDemo {
 
 
 
-		//Date of Demo as text box
+		//Step 13: Date of Demo as text box
 		//declare the webelement object
 		WebElement dateOfDemo = driver.findElement(By.id("vfb-18"));
 
@@ -577,7 +562,7 @@ public class RegisterDemo {
 
 
 
-		/*Select the demo time
+		/*Step 14: Select the demo time
 		 * Convenient Time
 		 * Drop Down List
 		 */
@@ -599,7 +584,7 @@ public class RegisterDemo {
 				System.out.println("Hour selection is enabled");
 				//selecting the hour
 				timeHourDropDown.selectByVisibleText(hourInput);
-				System.out.println("Hour is: " + hourInput);
+				System.out.println("Hour is selected: " + hourInput);
 
 			}
 			else {
@@ -653,7 +638,7 @@ public class RegisterDemo {
 
 
 
-		//Enter the Mobile Number
+		//Step:15 Enter the Mobile Number
 		//declare the webelement object
 		WebElement mobileNumber = driver.findElement(By.id("vfb-19"));
 
@@ -686,7 +671,7 @@ public class RegisterDemo {
 
 
 
-		//Select two cources with check box (Test NG, Core Java)
+		//Step: 16 Select two cources with check box (Test NG, Core Java)
 		//TestNG
 		//declare the webelement object
 		WebElement courseTestNG = driver.findElement(By.xpath("//input[@id='vfb-20-2']"));
@@ -772,7 +757,7 @@ public class RegisterDemo {
 		//Query Box
 		//Declare the webelement object
 		WebElement query = driver.findElement(By.id("vfb-23"));
-
+		
 		//Verify the query text box is displayed or not				
 		if(query.isDisplayed()) {
 			System.out.println("Query text box is displayed");
@@ -800,7 +785,7 @@ public class RegisterDemo {
 
 
 
-		//Extract the two digits from verification example
+		//Step:17 Extract the two digits from verification example
 		//Verification text xpath locator		
 		//declare the webelement object
 		WebElement example = driver.findElement(By.xpath("//label[contains(text(),'Example:')]"));
@@ -820,7 +805,7 @@ public class RegisterDemo {
 
 
 
-		//Enter the two extracted digits in the verification field
+		//Step: 18 Enter the two extracted digits in the verification field
 		//declare the webelement object
 		WebElement verificationField = driver.findElement(By.xpath("//input[@id='vfb-3']"));
 
@@ -851,7 +836,7 @@ public class RegisterDemo {
 
 
 
-		//Submit the form.
+		//Step: 19 Submit the form.
 		//declare the webelement object
 		WebElement submitButton = driver.findElement(By.id("vfb-4"));
 
@@ -880,10 +865,10 @@ public class RegisterDemo {
 		//Separator for clean output on console
 		System.out.println(" ");
 
-	}
 
-	@Test(priority=3)
-	public void validateSuccessfulMessage() {
+
+
+
 		//Step 20: Success transaction message validation
 		//declare the webelement object
 		WebElement transactionMessage = driver.findElement(By.xpath("//*[contains(text(),'Registration Form is Successfully Submitted.')]"));
@@ -926,6 +911,15 @@ public class RegisterDemo {
 		}
 
 
+
+
+		//Step 21: Close the browser
+		driver.close();
+		System.out.println("Application closed successfully\n");
+
+		//End of testing
+		System.out.println(" ");
+		System.out.println("******** Register Demo End to End Flow is Successful ********");
 
 	}
 
