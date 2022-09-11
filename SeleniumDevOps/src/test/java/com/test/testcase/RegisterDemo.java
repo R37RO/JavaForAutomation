@@ -1,4 +1,4 @@
-package com.telus.testcase;
+package com.test.testcase;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
