@@ -3,7 +3,7 @@
 <suite name="Automation Suite">
   <test thread-count="5" name="Register Demo Test">
     <classes>
-      <class name="com.telus.testcase.RegisterDemo"/>
+      <class name="com.test.testcase.RegisterDemo"/>
     </classes>
   </test> <!-- Register Demo Test -->
 </suite> <!-- Automation Suite -->
