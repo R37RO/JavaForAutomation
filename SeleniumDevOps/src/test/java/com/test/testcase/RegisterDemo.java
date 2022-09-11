@@ -20,10 +20,10 @@ public class RegisterDemo {
 	String firstNameInput = "Deepak";
 	String lastNameInput = "Singh";
 	String streetInput = "The xyz Road";
-	String cityInput = "Haldwani";
+	String cityInput = "Mumbai";
 	String countryInput = "India";
-	String stateInput = "Uttarakhand";
-	String postalInput = "263139";
+	String stateInput = "Maharashtra";
+	String postalInput = "400001";
 	String emailInput = "abcd@gmail.com";
 	String dateInput = "05/08/2022";
 	String mobileInput = "9400000000";
