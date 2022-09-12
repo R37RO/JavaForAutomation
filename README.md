@@ -7,6 +7,15 @@ Launch browser
 ```java
 WebDriverManager.chromedriver().setup();
 ChromeDriver driver = new ChromeDriver();
+
+String url = "https://example.com";
+
+//Open the browser window
+driver.get(url);
+
+//Maximize the browser window
+driver.manage().window().maximize();
+
 ```
 
 Close browser
